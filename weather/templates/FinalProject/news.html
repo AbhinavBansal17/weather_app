@@ -1,0 +1,90 @@
+{% extends "FinalProject/index.html" %}
+{% load static %}
+{% block body %}
+	<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="index.html">Home</a>
+				<span>Featured Weather</span>
+			</div>
+		</div>
+
+
+		<div class="fullwidth-block">
+			<div class="container">
+				<div class="row">
+					<div class="content col-md-8">
+						<p>Over here is our featured weathers. Click on the category of your choice to toggle between views and preview trending weathers for that category!</p>
+
+						<div class="post" id="countries">
+							<h2 class="entry-title">Countries</h2>
+							<div class="featured-image"><img src="images/featured-image-1.jpg" alt=""></div>
+							<a href="/get_weather/australia">Australia</a>
+							<br>
+							<a href="/get_weather/india">India</a>
+							<br>
+							<a href="/get_weather/spain">Spain</a>
+							<br>
+							<a href="/get_weather/brazil">Brazil</a>
+							<br>
+							<a href="/get_weather/mexico">Mexico</a>
+							<br>
+							<a href="/get_weather/china">China</a>
+						</div>
+
+						<div class="post" id="states">
+							<h2 class="entry-title">States</h2>
+							<div class="featured-image"><img src="images/featured-image-1.jpg" alt=""></div>
+							<a href="/get_weather/georgia">Georgia</a>
+							<br>
+							<a href="/get_weather/new york">New York</a>
+							<br>
+							<a href="/get_weather/florida">Florida</a>
+							<br>
+							<a href="/get_weather/california">California</a>
+							<br>
+							<a href="/get_weather/texas">Texas</a>
+							<br>
+							<a href="/get_weather/north carolina">North Carolina</a>
+						</div>
+
+						<div class="post" id="cities">
+							<h2 class="entry-title">Cities</h2>
+							<div class="featured-image"><img src="images/featured-image-1.jpg" alt=""></div>
+							<a href="/get_weather/atlanta">Atlanta</a>
+							<br>
+							<a href="/get_weather/new york city">New York City</a>
+							<br>
+							<a href="/get_weather/dubai">Dubai</a>
+							<br>
+							<a href="/get_weather/paris">Paris</a>
+							<br>
+							<a href="/get_weather/london">London</a>
+							<br>
+							<a href="/get_weather/hong kong">Hong Kong</a>
+							<br>
+						</div>
+					</div>
+					<div class="sidebar col-md-3 col-md-offset-1">
+
+						<div class="widget">
+							<h3 class="widget-title">Categories</h3>
+							<ul class="arrow-list">
+								<li id="country"><a href="#">Countries</a></li>
+								<li id="state"><a href="#">States</a></li>
+								<li id="city"><a href="#">Cities</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="{% static 'FinalProject/script2.js' %}"></script>
+	</main> <!-- .main-content -->
+
+
+
+{% endblock body %}
+

@@ -1,0 +1,42 @@
+{% extends "FinalProject/index.html" %}
+{% load static %}
+{% block body %}
+	<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="index.html">Home</a>
+				<span>Weather Maps</span>
+			</div>
+		</div>
+
+<br>
+
+        <div class="forecast-table">
+
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">Get your weather map today</div>
+							</div> <!-- .forecast-header -->
+                            <div class="container">
+                                <form action="{% url 'find_map' %}" class="find-location" method="post">
+                                    {% csrf_token %}
+                                    <input type="text" name="weather_map" placeholder="Find your map: clouds_new, pressure_new, wind_new, precipitation_new, temp_new">
+                                    <input type="submit" value="Find">
+                                </form>
+                            </div>
+                            <center>
+                            <h2>Featured Weather Maps:</h2>
+                            <h3>{{map_name}}</h3>
+							<div class="forecast-content">
+                                <center><img src="https://tile.openweathermap.org/map/{{map_name}}/2/2/3.png?appid=48797763c27bebcb04070c1c53182618"></center>
+							</div>
+                            </center>
+						</div>
+
+					</div>
+				</div>
+			</div>
+	</main> <!-- .main-content -->
+{% endblock body %}

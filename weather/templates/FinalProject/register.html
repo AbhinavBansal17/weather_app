@@ -1,0 +1,47 @@
+{% extends "FinalProject/index.html" %}
+{% load static %}
+{% block body %}
+	<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="index.html">Home</a>
+				<span>Register</span>
+			</div>
+		</div>
+<br>
+        <div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">Register</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								 <form action="{% url 'register' %}" method="post">
+									 <p>{{message}}</p>
+
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="email" name="email" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" name="password" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Register">
+                            </form>
+
+                            Already have an account? <a href="{% url 'login' %}">Log In here.</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+	</main> <!-- .main-content -->
+{% endblock body %}

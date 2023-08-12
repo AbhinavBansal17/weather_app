@@ -1,0 +1,46 @@
+{% extends "FinalProject/index.html" %}
+{% load static %}
+{% block body %}
+	<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="index.html">Home</a>
+				<span>Weather for {{location}}</span>
+			</div>
+		</div>
+
+<br>
+       <div class="hero">
+		   <div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">{{datetime}}</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{location}}</div>
+								<div class="degree">
+									<div class="num">{{data.main.temp}}<sup>o</sup>F</div>
+									<div class="forecast-icon">
+										<img src="images/icons/icon-1.svg" alt="" width=90>
+									</div>
+								</div>
+								<p>Feels like {{data.main.feels_like}}. {{main}}. {{description}}</p>
+								<span><img src="{% static 'FinalProject/images/icon-umberella.png' %}" alt="">20% chance</span>
+								<span><img src="{% static 'FinalProject/images/icon-wind.png' %}" alt="">{{data.wind.speed}} km/h</span>
+								<span><img src="{% static 'FinalProject/images/icon-compass.png' %}" alt="">{{data.wind.deg}}</span>
+								<span>Humidity: {{data.main.humidity}}%</span>
+								<span>Visibility: {{data.visibility}}</span>
+								<span>Pressure: {{data.main.pressure}}hPa</span>
+							</div>
+							<p>Max Temperature: {{data.main.temp_max}}</p>
+							<p>Min Temperature: {{data.main.temp_min}}</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+	   </div>
+	</main> <!-- .main-content -->
+{% endblock body %}

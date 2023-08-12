@@ -1,0 +1,122 @@
+{% extends "FinalProject/index.html" %}
+{% load static %}
+{% block body %}
+
+			<main class="main-content">
+				<div class="container">
+					<div class="breadcrumb">
+						<a href="index.html">Home</a>
+						<span>My-Profile</span>
+					</div>
+				</div>
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="filter">
+							<div class="country filter-control" id="info-2">
+								<label>Info</label>
+							</div>
+							<div class="count filter-control" id="weather-2">
+								<label>My Weather</label>
+							</div>
+							<div class="quality filter-control" id="password-2">
+								<label>Change Password</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+
+                <div id="info">
+                    <div class="forecast-table">
+                        <div class="container">
+                            <div class="forecast-container">
+                                <div class="today forecast">
+                                    <div class="forecast-header">
+                                        <div class="day"></div>
+                                    </div> <!-- .forecast-header -->
+                                    <div class="forecast-content">
+                                    <h1>My Info</h1>
+                                        <hr>
+                                        <br>
+                                    <h3>Name: {{user.username}}</h3>
+                                    <h3>Email: {{user.email}}</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="weather">
+                    <div class="forecast-table">
+                        <div class="container">
+                            <div class="forecast-container">
+                                <div class="today forecast">
+                                    <div class="forecast-header">
+                                        <div class="day"></div>
+                                    </div> <!-- .forecast-header -->
+                                    <div class="forecast-content">
+                                    <h1>Your Weather</h1>
+                                        <hr>
+                                        <br>
+                                    <h3>Your Location: {{user.location}}</h3>
+                                     <h4>Change Location:</h4>
+                                        <form action="{% url 'change_location' %}" method="post">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input autofocus class="form-control" type="text" name="new-location" placeholder="New Location">
+                                            </div>
+                                            <input class="btn btn-primary" type="submit" value="Submit">
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="password">
+                    <div class="forecast-table">
+                        <div class="container">
+                            <div class="forecast-container">
+                                <div class="today forecast">
+                                    <div class="forecast-header">
+                                        <div class="day"></div>
+                                    </div> <!-- .forecast-header -->
+                                    <div class="forecast-content">
+                                    <h1>Change Password</h1>
+                                        <hr>
+                                        <br>
+                                    <h3>Current Password: *****</h3>
+                                    <h4>Change Password:</h4>
+                                    <form action="{% url 'change_password' %}" method="post">
+                                        <p>{{message}}</p>
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <input autofocus class="form-control" type="text" name="password" placeholder="New Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password">
+                                        </div>
+                                        <input class="btn btn-primary" type="submit" value="Submit">
+                                    </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+    <script src="{% static 'FinalProject/script.js' %}"></script>
+
+	{% endblock %}
