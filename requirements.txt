@@ -4,7 +4,7 @@ cachelib==0.1.1
 certifi==2020.12.5
 chardet==4.0.0
 Click==7.0
-Django==3.0.8
+Django==2.1
 Flask==1.0.3
 Flask-Session==0.3.2
 Flask-SQLAlchemy==2.4.0
