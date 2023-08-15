@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nw(w0g+mz7jakbmb6xpmr0xu^aav=2^ntsw$nvx$l49%+6%#ko'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://z04tobfrpd.execute-api.us-east-2.amazonaws.com/']
 
 
 # Application definition
