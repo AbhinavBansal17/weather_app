@@ -1,4 +1,4 @@
-asgiref==3.2.10
+asgiref==3.3.2
 blinker==1.4
 boto3==1.28.30
 cachelib==0.1.1
