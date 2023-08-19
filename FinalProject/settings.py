@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +117,23 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+"""
+AWS_ACCESS_KEY_ID  = ""
+AWS_SECRET_ACCESS_KEY = ""
+
+AWS_STORAGE_BUCKET_NAME = ""
+
+DEFAULT_FILE_STORAGE = ""
+
+STATICFILES_STORAGE = ""
+
+AWS_S3_CUSTOM_DOMAIN = ""
+
+
+"""
+
 
 
 # Static files (CSS, JavaScript, Images)
