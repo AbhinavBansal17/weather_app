@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_protect
 import requests
 from .models import User
 from datetime import datetime
@@ -41,7 +42,7 @@ def featured_weather(request):
         return HttpResponseRedirect(reverse("login"))
      return render(request, 'FinalProject/news.html')
 
-
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
 
@@ -66,7 +67,7 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
-
+@csrf_protect
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -93,7 +94,7 @@ def register(request):
     else:
         return render(request, "FinalProject/register.html")
 
-
+@csrf_protect
 def find_weather(request):
      if request.method == "POST":
           location = request.POST["location"]
@@ -130,7 +131,7 @@ def get_weather(request, location):
 def profile_page(request):
     return render(request, "FinalProject/profile_page.html")
 
-
+@csrf_protect
 def change_location(request):
     if request.user.is_authenticated:
         user = request.user
@@ -143,7 +144,7 @@ def change_location(request):
 
     return HttpResponseRedirect(reverse("profile_page"))
 
-
+@csrf_protect
 def change_password(request):
     if request.user.is_authenticated:
         user = request.user
@@ -165,7 +166,7 @@ def weather_maps(request):
         return HttpResponseRedirect(reverse("login"))
     return render(request, "FinalProject/weather_maps.html", {"map_name": "wind_new"})
 
-
+@csrf_protect
 def find_map(request):
     if request.method == "POST":
         weather_map = request.POST["weather_map"]
