@@ -120,9 +120,6 @@ USE_TZ = True
 
 
 
-AWS_ACCESS_KEY_ID  = "AKIASMDLUSF7UNIJW2FZ"
-AWS_SECRET_ACCESS_KEY = "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"
-
 AWS_STORAGE_BUCKET_NAME = "weatherstaticfiles"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
