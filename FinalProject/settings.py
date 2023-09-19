@@ -54,6 +54,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'FinalProject.urls'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://756fpyqw5l.execute-api.us-east-2.amazonaws.com'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
