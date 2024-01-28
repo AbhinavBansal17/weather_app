@@ -25,6 +25,16 @@ SECRET_KEY = 'nw(w0g+mz7jakbmb6xpmr0xu^aav=2^ntsw$nvx$l49%+6%#ko'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_COOKIE_DOMAIN = [
+    "https://756fpyqw5l.execute-api.us-east-2.amazonaws.com/",
+    # Add other cookie domain here if needed
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://756fpyqw5l.execute-api.us-east-2.amazonaws.com/",
+    # Add other CSRF trusted origins here if needed
+]
+
 ALLOWED_HOSTS = ['*']
 
 
